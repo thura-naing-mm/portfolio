@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb-w: 0, 0, 0;
+  --background-image-w: url('../../public/images/bg-w.jpg');
+  --background-image-b: url('../../public/images/bg-b.jpg');
+  --foreground-rgb-b: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+    --background-image: url('../../public/images/bg-b.jpg');
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb-w));
+  background-image: var(--background-image-w);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.dark body {
+  color: rgb(var(--foreground-rgb-b));
+  background-image: var(--background-image-b);
+}
