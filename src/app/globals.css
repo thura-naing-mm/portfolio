@@ -23,9 +23,9 @@
 body {
   color: rgb(var(--foreground-rgb-w));
   background-image: var(--background-image-w);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-size: initial;
+  background-repeat: repeat;
+  background-position: top;
 }
 
 .dark body {
