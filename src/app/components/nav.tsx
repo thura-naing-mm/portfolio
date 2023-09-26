@@ -4,7 +4,6 @@ import {
   Navbar,
   Collapse,
   Typography,
-  Button,
   IconButton,
 } from '@material-tailwind/react';
 import { ThemeButton } from './theme-button';
@@ -12,7 +11,7 @@ import { ThemeButton } from './theme-button';
 interface PropTypes { }
 
 const styles = {
-  navbar: `mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4 bg-white/[.6] dark:bg-gray-800/[.6] dark:border-gray-700`,
+  navbar: `mx-auto mx-full py-2 px-4 lg:px-8 lg:py-4 bg-white/[.6] dark:bg-gray-800/[.6] dark:border-gray-700`,
   navbarConatiner: `mx-full flex items-center justify-between`,
   menuIcon: `h-6 w-6 text-gray-700 bg-white hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-500 dark:bg-gray-800 focus:outline-none dark:text-gray-400 dark:hover:text-white lg:hidden`,
   svg: `h-6 w-6`,
@@ -35,7 +34,7 @@ export const Nav: React.FC<PropTypes> = ({ }) => {
   const menuList = [
     {
       link: '#about',
-      text: 'About Me'
+      text: 'About'
     },
     {
       link: '#education',

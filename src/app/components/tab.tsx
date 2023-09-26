@@ -15,6 +15,14 @@ import {
 
 interface PropTypes { }
 
+const styles = {
+  tabHeader: `flex-col md:flex-row`,
+  tabHeaderIndicatorProps: `bg-gray-900/10 shadow-none !text-gray-900`,
+  tabBlock: `flex items-center gap-2 text-gray-900`,
+  tab: `w-5 h-5`,
+  TabPanel: `mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400`
+}
+
 export const TabsWithIcon: React.FC<PropTypes> = ({ }) => {
   const data = [
     {
@@ -45,15 +53,15 @@ export const TabsWithIcon: React.FC<PropTypes> = ({ }) => {
   return (
     <Tabs value='characters'>
       <TabsHeader
-      className='flex-col md:flex-row'
+        className={styles.tabHeader}
         indicatorProps={{
-          className: 'bg-gray-900/10 shadow-none !text-gray-900',
+          className: styles.tabHeaderIndicatorProps,
         }}
       >
         {data.map(({ label, value, icon }) => (
-          <Tab key={value} value={value} className='bg-red'>
-            <div className='flex items-center gap-2 text-gray-900'>
-              {React.createElement(icon, { className: 'w-5 h-5' })}
+          <Tab key={value} value={value}>
+            <div className={styles.tabBlock}>
+              {React.createElement(icon, { className: styles.tab })}
               {label}
             </div>
           </Tab>
@@ -61,7 +69,7 @@ export const TabsWithIcon: React.FC<PropTypes> = ({ }) => {
       </TabsHeader>
       <TabsBody>
         {data.map(({ value, desc }) => (
-          <TabPanel key={value} value={value} className='mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400'>
+          <TabPanel key={value} value={value} className={styles.TabPanel}>
             {desc}
           </TabPanel>
         ))}

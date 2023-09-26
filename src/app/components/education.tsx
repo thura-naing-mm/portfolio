@@ -24,7 +24,7 @@ export const Education: React.FC<PropTypes> = ({ }) => {
       <Timeline className='mt-5'>
         <TimelineItem className='h-28'>
           <TimelineConnector className='!w-[78px]' />
-          <TimelineHeader className='relative rounded-xl border border-blue-gray-50 bg-white py-3 pl-4 pr-8 shadow-lg shadow-blue-gray-900/5'>
+          <TimelineHeader className='relative rounded-xl border border-blue-gray-50 dark:border-blue-gray-900 bg-white dark:bg-gray-400 py-3 pl-4 pr-8 shadow-lg shadow-blue-gray-900/5 dark:shadow-blue-gray-100/5'>
             <TimelineIcon className='p-3' variant='ghost'>
               <BellIcon className='h-5 w-5' />
             </TimelineIcon>
@@ -32,7 +32,7 @@ export const Education: React.FC<PropTypes> = ({ }) => {
               <Typography variant='h6' color='blue-gray'>
                 $2400, Design changes
               </Typography>
-              <Typography variant='small' color='gray' className='font-normal'>
+              <Typography variant='small' color='gray' className='font-normal text-start dark:text-blue-gray-900'>
                 22 DEC 7:20 PM
               </Typography>
             </div>
@@ -40,7 +40,7 @@ export const Education: React.FC<PropTypes> = ({ }) => {
         </TimelineItem>
         <TimelineItem className='h-28'>
           <TimelineConnector className='!w-[78px]' />
-          <TimelineHeader className='relative rounded-xl border border-blue-gray-50 bg-white py-3 pl-4 pr-8 shadow-lg shadow-blue-gray-900/5'>
+          <TimelineHeader className='relative rounded-xl border border-blue-gray-50 dark:border-blue-gray-900 bg-white dark:bg-gray-400 py-3 pl-4 pr-8 shadow-lg shadow-blue-gray-900/5 dark:shadow-blue-gray-100/5'>
             <TimelineIcon className='p-3' variant='ghost' color='red'>
               <ArchiveBoxIcon className='h-5 w-5' />
             </TimelineIcon>
@@ -48,14 +48,14 @@ export const Education: React.FC<PropTypes> = ({ }) => {
               <Typography variant='h6' color='blue-gray'>
                 New order #1832412
               </Typography>
-              <Typography variant='small' color='gray' className='font-normal'>
+              <Typography variant='small' color='gray' className='font-normal text-start dark:text-blue-gray-900'>
                 21 DEC 11 PM
               </Typography>
             </div>
           </TimelineHeader>
         </TimelineItem>
         <TimelineItem className='h-28'>
-          <TimelineHeader className='relative rounded-xl border border-blue-gray-50 bg-white py-3 pl-4 pr-8 shadow-lg shadow-blue-gray-900/5'>
+          <TimelineHeader className='relative rounded-xl border border-blue-gray-50 dark:border-blue-gray-900 bg-white dark:bg-gray-400 py-3 pl-4 pr-8 shadow-lg shadow-blue-gray-900/5 dark:shadow-blue-gray-100/5'>
             <TimelineIcon className='p-3' variant='ghost' color='green'>
               <CurrencyDollarIcon className='h-5 w-5' />
             </TimelineIcon>
@@ -63,7 +63,7 @@ export const Education: React.FC<PropTypes> = ({ }) => {
               <Typography variant='h6' color='blue-gray'>
                 Payment completed for order #4395133
               </Typography>
-              <Typography variant='small' color='gray' className='font-normal'>
+              <Typography variant='small' color='gray' className='font-normal text-start dark:text-blue-gray-900'>
                 20 DEC 2:20 AM
               </Typography>
             </div>
