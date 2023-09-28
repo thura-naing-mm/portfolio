@@ -5,7 +5,7 @@ import {
   SunIcon,
   MoonIcon
 } from '@heroicons/react/24/solid';
-import { Tooltip } from "@material-tailwind/react";
+import { Tooltip } from '@material-tailwind/react';
 
 interface PropTypes { }
 

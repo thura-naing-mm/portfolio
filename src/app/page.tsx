@@ -6,9 +6,8 @@ import { Container } from './components/container';
 
 const styles = {
   container: `flex items-start justify-between`,
-  test: `w-1/4 p-5 bg-black/[.1] dark:bg-t`,
-  side: `hidden lg:block lg:sticky top-0 z-[999] h-screen w-1/4 p-5 bg-black/[.1] dark:bg-t pb-4 pr-4`,
-  content: `w-full lg:w-3/4 min-h-screen  dark:bg-white/[.1]  p-5`
+  side: `hidden lg:flex items-center justify-center lg:sticky top-0 z-[999] h-screen w-1/4 p-5 bg-black/[.1] dark:bg-t pb-4 pr-4 `,
+  content: `w-full lg:w-3/4 min-h-screen dark:bg-white/[.1] p-5`
 };
 export default function Home() {
   return (

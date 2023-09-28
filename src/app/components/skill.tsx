@@ -1,9 +1,8 @@
 'use client'
 import React, { useEffect, useState } from 'react';
-import { Avatar, Progress } from '@material-tailwind/react';
-import { Typography, } from '@material-tailwind/react';
-import { Title } from './title';
+import { Avatar, Progress, Typography } from '@material-tailwind/react';
 import Image from 'next/image'
+import { Title } from './title';
 
 interface PropTypes { }
 
