@@ -1,29 +1,34 @@
 'use client'
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Card,
   Input,
   Textarea,
   Button,
-  Typography
+  Typography,
+  Spinner
 } from '@material-tailwind/react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import { Title } from './title';
+import { MessageDialog } from './dialog';
+import { Form } from '../interface/mail';
 
 interface PropTypes { }
 
 const styles = {
   card: `items-center`,
   typography: `mt-6 mb-2 font-normal dark:text-blue-gray-100`,
-  form: `'w-80 max-w-screen-lg md:w-96 min-w-[80%] md:min-w-[40%] flex flex-col gap-1.5`,
+  form: `'w-80 max-w-screen-lg md:w-96 min-w-[80%] md:min-w-[40%] flex flex-col gap-2`,
   input: `dark:text-blue-gray-100`,
-  error: `dark:text-blue-gray-100 h-4 text-start`,
+  error: `flex items-center	dark:text-blue-gray-100 h-4 text-start`,
   button: `mt-2`
 }
 
 export const Contact: React.FC<PropTypes> = ({ }) => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isErrorMessage, setIsErrorMessage] = useState<boolean | null>(null);
 
   // form validation rules 
   const validationSchema = Yup.object().shape({
@@ -43,10 +48,24 @@ export const Contact: React.FC<PropTypes> = ({ }) => {
   const { register, handleSubmit, reset, formState } = useForm(formOptions);
   const { errors } = formState;
 
-  function onSubmit(data: any) {
-    // display form data on success
-    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(data, null, 4));
-    return false;
+  async function onSubmit(data: Form) {
+    setIsErrorMessage(null);
+    setIsLoading(true)
+    try {
+      await fetch('/api/mail', {
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        method: 'POST',
+      });
+      setIsErrorMessage(false);
+    } catch (error) {
+      console.error(error);
+      setIsErrorMessage(true);
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (
@@ -61,53 +80,54 @@ export const Contact: React.FC<PropTypes> = ({ }) => {
             <Input
               color='blue-gray'
               label='Your Name'
-              type="text"
+              type='text'
               crossOrigin={undefined}
               className={styles.input}
               error={errors.fullName?.message ? true : false}
               {...register('fullName')}
             />
-            <div className={styles.error}>{errors.fullName?.message}</div>
-          </div>
-          <div>
-            <Input
-              color='blue-gray'
-              label='Your Email'
-              type="email"
-              crossOrigin={undefined}
-              className={styles.input}
-              error={errors.email?.message ? true : false}
-              {...register('email')}
-            />
-            <div className={styles.error}>{errors.email?.message}</div>
+            <span className={styles.error}>{errors.fullName?.message}</span>
           </div>
           <div>
             <Input
               color='blue-gray'
               label='Your Subject'
-              type="text"
+              type='text'
               crossOrigin={undefined}
               className={styles.input}
               error={errors.subject?.message ? true : false}
               {...register('subject')}
             />
-            <div className={styles.error}>{errors.subject?.message}</div>
+            <span className={styles.error}>{errors.subject?.message}</span>
+          </div>
+          <div>
+            <Input
+              color='blue-gray'
+              label='Your Email'
+              type='email'
+              crossOrigin={undefined}
+              className={styles.input}
+              error={errors.email?.message ? true : false}
+              {...register('email')}
+            />
+            <span className={styles.error}>{errors.email?.message}</span>
           </div>
           <div>
             <Textarea
               color='blue-gray'
               className={styles.input}
               label='Your Message'
-              error={errors.subject?.message ? true : false}
+              error={errors.message?.message ? true : false}
               {...register('message')}
             />
-            <div className={styles.error}>{errors.message?.message}</div>
+            <span className={styles.error}>{errors.message?.message}</span>
           </div>
-          <Button type="submit" className={styles.button} fullWidth>
-            Send Me
+          <Button type='submit' className={styles.button} fullWidth disabled={isLoading}>
+            {isLoading ? 'LOADING...' : 'SEND ME'}
           </Button>
         </form>
       </Card>
+      {isErrorMessage != null && (<MessageDialog errorMessage={isErrorMessage} />)}
     </>
   )
 }
