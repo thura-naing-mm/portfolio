@@ -12,10 +12,10 @@ interface PropTypes { }
 
 const styles = {
   container: `flex w-full flex-wrap justify-between px-6`,
-  block: `flex sm:w-[calc(50%-0.5rem)] w-full flex-col mt-4`,
+  block: `flex sm:w-[calc(50%-0.5rem)] w-full flex-col mt-4 bg-white/[.6] border border-gray-200 rounded-lg shadow dark:bg-gray-800/[.6] dark:border-gray-700`,
   image: `object-contain`,
-  count: `text-start my-4`,
-  text: `text-start`
+  count: `text-start my-4 dark:text-white`,
+  text: `text-start dark:text-gray-400`
 }
 
 export const Project: React.FC<PropTypes> = ({ }) => {

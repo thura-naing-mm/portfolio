@@ -6,7 +6,7 @@ import { Container } from './components/container';
 import { Dial } from './components/dial';
 
 const styles = {
-  container: `flex items-start justify-between relative`,
+  container: `flex items-start justify-between`,
   side: `hidden lg:flex items-center justify-center lg:sticky top-0 z-[999] h-screen w-1/4 p-5 bg-black/[.1] dark:bg-t pb-4 pr-4 `,
   content: `w-full lg:w-3/4 min-h-screen dark:bg-white/[.1] p-5`
 };
