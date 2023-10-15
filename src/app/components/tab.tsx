@@ -29,24 +29,23 @@ export const TabsWithIcon: React.FC<PropTypes> = ({ }) => {
       label: 'Characters',
       value: 'characters',
       icon: HeartIcon,
-      desc: `It really matters and then like it really doesn't matter.
-          What matters is the people who are sparked by it. And the people
-          who are like offended by it, it doesn't matter.`,
+      desc: `Problem-Solver, Continuous Learner, Innovative, Quality-Driven, Time Management`,
     },
     {
       label: 'Interesting',
       value: 'interesting',
       icon: StarIcon,
-      desc: `Because it's about motivating the doers. Because I'm here
-          to follow my dreams and inspire other people to follow their dreams, too.`,
+      desc: `Enjoy tackling challenging issues and finding elegant solutions to technical problems.
+      Always learn and stay current with new programming languages, frameworks, and tools.`,
     },
     {
       label: 'Future Plan',
       value: 'future',
       icon: TrophyIcon,
-      desc: `We're not always in the position that we want to be at.
-          We're constantly growing. We're constantly making mistakes. We're
-          constantly trying to express ourselves and actualize our dreams.`,
+      desc: `I am dedicated to evolving as a web developer, with a focus on gaining 
+      leadership experience and improving my communication skills. 
+      My ultimate goal is to lead a small IT-based company, fostering innovation 
+      and effective collaboration within the team.`,
     },
   ];
 

@@ -8,7 +8,8 @@ export const Experience: React.FC<PropTypes> = ({ }) => {
   return (
     <>
       <Title title={'Experience'} />
-      contact container
+      <div>Sorry, this section is under development.
+        <br />If you are interested, please contact me using the contact form.</div>
     </>
   )
 }

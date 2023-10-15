@@ -15,8 +15,10 @@ export const About: React.FC<PropTypes> = ({ }) => {
     <>
       <Title title={'About Me'} />
       <p className={styles.p}>
-        I&#39;m Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media. I enjoy turning complex problems into simple, beautiful and intuitive designs.
-        My aim is to bring across your message and identity in the most creative way. I created web design for many famous brand companies.
+        Highly skilled Web Developer with a strong background in a wide range of technologies and frameworks.
+        Experienced in designing and developing web applications, using both front-end and back-end technologies.
+        Proficient in Python, Go, PHP, Angular, React, NestJS, Next.js, Express.js, Strapi, WordPress, Docker,
+        gRPC, Microservices, Google Cloud and Firebase.
       </p>
       <hr className={styles.hr} />
       <TabsWithIcon />

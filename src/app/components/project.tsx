@@ -23,22 +23,26 @@ export const Project: React.FC<PropTypes> = ({ }) => {
     {
       path: '/images/logo/angular.svg',
       count: 20,
-      text: 'Because it&apos;s about motivating the doers. Because I&apos;m here to follow my dreams and inspire others.'
+      text: 'I have created web applications using Angular for the frontend, incorporating Material Design principles for sleek and user-friendly interfaces.',
+      project: ['rescue-web', 'saitenkun', 'crawler', 'pingus', 'chienowa']
     },
     {
       path: '/images/logo/python.svg',
       count: 5,
-      text: 'Because it&apos;s about motivating the doers. Because I&apos;m here to follow my dreams and inspire others.'
+      text: 'I have leveraged Python to build robust web applications using Flask as the backend framework.',
+      project: ['']
     },
     {
       path: '/images/logo/wordpress.svg',
       count: 10,
-      text: 'Because it&apos;s about motivating the doers. Because I&apos;m here to follow my dreams and inspire others.'
+      text: 'I have designed and developed WordPress websites that combine functionality and aesthetics. These projects highlight my ability to create visually appealing, user-friendly sites while customizing themes, adding plugins, and ensuring responsive design.',
+      project: ['']
     },
     {
       path: '/images/logo/strapi.svg',
       count: 3,
-      text: 'Because it&apos;s about motivating the doers. Because I&apos;m here to follow my dreams and inspire others.'
+      text: 'I have leveraged Strapi, a powerful headless CMS, to swiftly develop robust backend APIs. These projects demonstrate my ability to create flexible and scalable content management solutions, making it easier to manage, deliver, and extend content to various platforms and applications.',
+      project: ['']
     },
 
   ];
