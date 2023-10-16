@@ -4,6 +4,7 @@ import { Side } from './components/side';
 import { Nav } from './components/nav';
 import { Container } from './components/container';
 import { Dial } from './components/dial';
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3"
 
 const styles = {
   container: `flex items-start justify-between`,
@@ -13,15 +14,17 @@ const styles = {
 export default function Home() {
   return (
     <ThemeProvider attribute='class' themes={['light', 'dark']}>
-      <div className={styles.container}>
-        <div className={styles.side}>
-          <Side />
+      <GoogleReCaptchaProvider reCaptchaKey='6LfG76YoAAAAAJkauXE_6wwanpWvi2UBELJuz_vZ'>
+        <div className={styles.container}>
+          <div className={styles.side}>
+            <Side />
+          </div>
+          <div className={styles.content}>
+            <Nav />
+            <Container />
+          </div>
         </div>
-        <div className={styles.content}>
-          <Nav />
-          <Container />
-        </div>
-      </div>
+      </GoogleReCaptchaProvider>
       <Dial />
     </ThemeProvider>
   )

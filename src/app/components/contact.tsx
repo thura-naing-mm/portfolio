@@ -11,9 +11,11 @@ import {
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { Title } from './title';
 import { MessageDialog } from './dialog';
 import { Form } from '../interface/mail';
+import { verifyCaptchaAction } from '../api/captcha';
 
 interface PropTypes { }
 
@@ -29,6 +31,10 @@ const styles = {
 export const Contact: React.FC<PropTypes> = ({ }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isErrorMessage, setIsErrorMessage] = useState<boolean | null>(null);
+
+  // initialises the powerful hook that is in charge of executing the
+  // reCAPTCHA behind the scenes.
+  const { executeRecaptcha } = useGoogleReCaptcha()
 
   // form validation rules 
   const validationSchema = Yup.object().shape({
@@ -51,21 +57,36 @@ export const Contact: React.FC<PropTypes> = ({ }) => {
   async function onSubmit(data: Form) {
     setIsErrorMessage(null);
     setIsLoading(true)
-    try {
-      await fetch('/api/mail', {
-        body: JSON.stringify(data),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        method: 'POST',
-      });
-      setIsErrorMessage(false);
-    } catch (error) {
-      console.error(error);
-      setIsErrorMessage(true);
-    } finally {
-      setIsLoading(false);
+
+    // if the component is not mounted yet
+    if (!executeRecaptcha) {
+      return
     }
+    console.log(executeRecaptcha, 'executeRecaptcha')
+    // receive a token
+    const token = await executeRecaptcha('onSubmit');
+    // validate the token via the server action we've created previously
+    const verified = await verifyCaptchaAction(token);
+    console.log(verified, 'verifiedverifiedverified')
+
+    if (verified) {
+      try {
+        await fetch('/api/mail', {
+          body: JSON.stringify(data),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          method: 'POST',
+        });
+        setIsErrorMessage(false);
+      } catch (error) {
+        console.error(error);
+        setIsErrorMessage(true);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    setIsLoading(false);
   }
 
   return (

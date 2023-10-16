@@ -24,7 +24,7 @@ import {
 interface PropTypes { }
 
 const styles = {
-  container: `fixed bottom-5 right-5`,
+  container: `fixed bottom-24 right-5`,
   handlerIconButton: `rounded-full`,
   handlerIcon: `h-5 w-5 transition-transform group-hover:rotate-45`,
   dialAction: `relative dark:bg-gray-900`,
