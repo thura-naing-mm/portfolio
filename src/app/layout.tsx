@@ -4,14 +4,12 @@ import { META } from './constant/index.constants'
 import { Inter } from 'next/font/google'
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/react';
-import Favicon from '/public/favicon.ico';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: META.title,
   description: META.description,
-  icons: [{ rel: 'icon', url: Favicon.src }],
 }
 
 export default function RootLayout({
