@@ -10,6 +10,9 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: META.title,
   description: META.description,
+  icons: {
+    icon: '/favicon.png',
+  },
 }
 
 export default function RootLayout({
