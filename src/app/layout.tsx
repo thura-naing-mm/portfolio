@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { META } from './constant/index.constants'
 import { Inter } from 'next/font/google'
 import Script from 'next/script';
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -30,7 +31,10 @@ export default function RootLayout({
         `}
         </Script>
       </head>
-      <body className={inter.className} suppressHydrationWarning={true}>{children}</body>
+      <body className={inter.className} suppressHydrationWarning={true}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   )
 }
