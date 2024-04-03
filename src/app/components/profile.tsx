@@ -77,7 +77,7 @@ export const Profile: React.FC<PropTypes> = ({ }) => {
         shadow={false}
         color='transparent'
         className={styles.cardHeader}>
-        <Image src='/images/profile.jpg' width={350} height={350} alt='profile-picture' />
+        <Image src='/images/profile.png' width={350} height={350} alt='profile-picture' />
       </CardHeader>
       <CardBody className={styles.cardBody}>
         <Typography variant='h4' color='blue-gray' className={styles.cardBodyName}>
