@@ -53,7 +53,7 @@ export const Profile: React.FC<PropTypes> = ({ }) => {
     // },
     {
       social: 'LINE',
-      link: 'https://line.me/R/ti/p/thuranaing7',
+      link: 'https://line.me/ti/p/Zk5dqXXjPS',
       color: 'blue',
       path: '/images/logo/line.svg'
     },
