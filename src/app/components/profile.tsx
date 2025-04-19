@@ -95,12 +95,12 @@ export const Profile: React.FC<PropTypes> = ({ }) => {
             </a>
           </Tooltip>
         ))}
-        <a href='/Thura-Naing-CV.pdf' target='_blank'>
+        {/* <a href='/Thura-Naing-CV.pdf' target='_blank'>
           <Button size='lg' color='white' className={styles.button}>
             <IdentificationIcon className={styles.icon} />
             Download CV
           </Button>
-        </a>
+        </a> */}
       </CardFooter>
     </Card>
   )
